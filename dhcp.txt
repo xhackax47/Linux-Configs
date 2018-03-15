@@ -1,0 +1,12 @@
+option domain-name-servers adress ip du srv;
+default-lease-time 600;
+max-lease-time 7200;
+subnet adress reseaux netmask masque de sous reseau {
+range adress de debut adress de fin;
+option domain-name-servers ip du srv;
+option domain-name "domain.local";
+option routers ip du srv;
+option broadcast-address adress de broadcast;
+default-lease-time 600;
+max-lease-time 7200;
+}

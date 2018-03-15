@@ -1,0 +1,81 @@
+passer le linux en ip fix
+ifconfig
+retenez l'ip
+cd /etc/network
+nano interfaces
+
+# The primary network interface
+allow-hotplug eth0
+iface eth0 inet static
+        address 10.13.127.214
+        netmask 255.255.128.0
+        broadcast 10.13.127.255
+        gateway 10.13.0.1
+
+***********************************
+cd
+cd /home
+mkdir partage
+
+aptitude install samba
+
+ajouter a la fin fichier de conf
+
+/etc/samba/smb.conf
+
+[partage]
+comment = dossier de partage
+path = /home/partage
+guest ok = no
+browseable = yes
+read only = no
+writable = yes
+valid groups = nom du groupe
+
+
+
+************************************
+aptitude install ssh
+verifier le fichier de conf
+/etc/ssh/sshd_config
+port 22
+
+ssh "l'address ip du linux"
+
+adduser "root" ssh
+
+tester la connexion avec putty
+
+
+************************************
+aptitude install vsftpd
+
+cd /etc
+ls
+nano vsftpd.conf
+************************************
+adduser = creation d'un utilisateur
+addgroup = creation d'un group
+adduser = ajout d'un utilisateur dans un groupe (adduser test groupe1)
+rm = effacer un dossié
+mkdir = creation de fichié
+chmod = changé les droits
+Droit 	                                    Valeur alphanumérique  Valeur octale
+aucun droit 	                                   --- 	                0
+exécution seulement 	                           --x 	                1
+écriture seulement 	                           -w- 	                2
+écriture et exécution 	                           -wx 	                3
+lecture seulement 	                           r-- 	                4
+lecture et exécution 	                           r-x 	                5
+lecture et écriture 	                           rw- 	                6
+tous les droits (lecture, écriture et exécution)   rwx          	7 
+****************************************
+dhcp
+apt-get install isc-dhcp-server
+
+nano /etc/default/isc-dhcp-server (interface d'entré du dhcp) 
+
+nano /etc/dhcp/dhcpd.conf
+
+
+

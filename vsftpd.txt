@@ -1,0 +1,53 @@
+># Nous voulons que le serveur fonctionne en mode standalone&lt;/pre&gt;
+listen=YES
+#
+# Ce paramètre désactive les connexions anonymes
+anonymous_enable=NO
+#
+# Ce paramètre autorise les utilisateurs locaux à se connecter au FTP
+local_enable=YES
+#
+# Ce paramètre autorise à remonter les fichiers sur le serveur
+write_enable=YES
+#
+# On fixe le masque local a 022 (les fichiers remontés auront des droits en 755)
+local_umask=022
+#
+# On interdit l’upload anonyme
+anon_upload_enable=NO
+#
+# On interdit la création de répertoires
+anon_mkdir_write_enable=NO
+#
+# Ce paramètre permet de logguer les actions
+xferlog_enable=YES
+#
+# On vérifie que la commande PORT provient bien du port 20
+connect_from_port_20=YES
+#
+# Emplacement du fichier de logs
+xferlog_file=/var/log/vsftpd.log
+#
+# Ci-dessous, on paramètre des valeurs de TIMEOUT
+idle_session_timeout=300
+data_connection_timeout=120
+connect_timeout=60
+accept_timeout=60
+#
+# On interdit la commande ABOR
+async_abor_enable=NO
+#
+# Interdiction des transferts en ASCII
+ascii_upload_enable=NO
+ascii_download_enable=NO
+#
+# Configuration de la bannière (message d'accueil) de votre FTP
+ftpd_banner=Bienvenue sur le serveur FTP de Thibz
+#
+# Ce paramètre bloque les utilisateurs à leur répertoire
+chroot_local_user=YES
+chroot_list_enable=NO
+#
+# Ci-dessous, pour que les heures d’enregistrement des fichiers et dossiers soient à l'heure du serveur et non du client
+use_localtime=YES
+&lt;pre&gt;
